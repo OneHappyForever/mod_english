@@ -18,9 +18,9 @@
 <main class="content">
 	<div class="content-header ui-content-header">
 		<div class="container">
-			<h1 class="content-heading">请选择一种方式进行充值</h1>
-			<p>充值后会在<a href="/user/donate">【捐赠公示】</a>中公示，如不想公示可以在<a href="/user/donate">【捐赠公示】</a>中修改设置为匿名。</p>
-			<h4 class="content-heading">当前余额：{$user->money} 元</h4>
+			<h1 class="content-heading">Credits Purchase</h1>
+			<p>Please choose your prefered method of payment:</p>
+			<h4 class="content-heading">Current balance: {$user->money} rmb</h4>
 		</div>
 	</div>
 	<div class="container">
@@ -31,16 +31,16 @@
 						<div class="card-main">
 							<div class="card-inner">
 								<div class="card-inner">
-									<p class="card-heading">充值码</p>
-									<p>当前余额：{$user->money} 元</p>
+									<p class="card-heading">Gift card code:</p>
+									<p>Current balance：{$user->money} rmb/p>
 									<div class="form-group form-group-label">
-										<label class="floating-label" for="code">充值码</label>
+										<label class="floating-label" for="code">Gift card code</label>
 										<input class="form-control" id="code" type="text">
 									</div>
 								</div>
 								<div class="card-action">
 									<div class="card-action-btn pull-left">
-										<button class="btn btn-flat waves-attach" id="code-update" ><span class="icon">check</span>&nbsp;充值</button>
+										<button class="btn btn-flat waves-attach" id="code-update" ><span class="icon">check</span>&nbsp;Recharge</button>
 									</div>
 								</div>
 							</div>
@@ -54,8 +54,8 @@
 							<div class="card-inner">
 								<div class="card-inner" style="height:150px">
 									<h4 class="showmoney">
-										当前余额：
-										<p>{$user->money} 元</p>
+										Current balance：
+										<p>{$user->money} rmb</p>
 									</h4>
 								</div>
 
@@ -90,10 +90,10 @@
 											<table class="table table-hover">
 												<tr>
 													<th>ID</th>
-													<th>代码</th>
-													<th>类型</th>
-													<th>操作</th>
-													<th>使用时间</th>
+													<th>Transaction number</th>
+													<th>Type</th>
+													<th>Action</th>
+													<th>Time</th>
 
 												</tr>
                                                 {foreach $codes as $code}
@@ -102,28 +102,28 @@
 															<td>#{$code->id}</td>
 															<td>{$code->code}</td>
                                                             {if $code->type==-1}
-																<td>金额充值</td>
+																<td>Credits purchase</td>
                                                             {/if}
                                                             {if $code->type==10001}
-																<td>流量充值</td>
+																<td>Data package purchase</td>
                                                             {/if}
                                                             {if $code->type==10002}
-																<td>用户续期</td>
+																<td>Subscription renewal</td>
                                                             {/if}
                                                             {if $code->type>=1&&$code->type<=10000}
-																<td>等级续期 - 等级{$code->type}</td>
+																<td>Grade expired - grade {$code->type}</td>
                                                             {/if}
                                                             {if $code->type==-1}
-																<td>充值 {$code->number} 元</td>
+																<td>Purchased {$code->number} rmb</td>
                                                             {/if}
                                                             {if $code->type==10001}
-																<td>充值 {$code->number} GB 流量</td>
+																<td>Purchased {$code->number} GB data transfer package</td>
                                                             {/if}
                                                             {if $code->type==10002}
-																<td>延长账户有效期 {$code->number} 天</td>
+																<td>Subscription lengthened by {$code->number} days</td>
                                                             {/if}
                                                             {if $code->type>=1&&$code->type<=10000}
-																<td>延长等级有效期 {$code->number} 天</td>
+																<td>Grade lengthened by {$code->number} days</td>
                                                             {/if}
 															<td>{$code->usedatetime}</td>
 														</tr>
@@ -145,10 +145,10 @@
 						<div class="modal-content">
 							<div class="modal-heading">
 								<a class="modal-close" data-dismiss="modal">×</a>
-								<h2 class="modal-title">正在连接支付宝</h2>
+								<h2 class="modal-title">Now connecting you to Alipay...</h2>
 							</div>
 							<div class="modal-inner">
-								<p id="title">正在处理...</p>
+								<p id="title">Processing...</p>
 							</div>
 						</div>
 					</div>
@@ -159,17 +159,17 @@
 						<div class="modal-content">
 							<div class="modal-heading">
 								<a class="modal-close" data-dismiss="modal">×</a>
-								<h2 class="modal-title">请使用支付宝App扫码充值：</h2>
+								<h2 class="modal-title">Please use the Alipay app to scan and pay：</h2>
 							</div>
 							<div class="modal-inner">
-								<p id="title">手机点击二维码转跳支付宝</p>
+								<p id="title">You can tap on the QR code to be automatically redirected to Alipay</p>
 								<p id="divide">-------------------------------------------------------------</p>
 								<p id="qrcode"></p>
 								<p id="info"></p>
 							</div>
 
 							<div class="modal-footer">
-								<p class="text-right"><button class="btn btn-flat btn-brand waves-attach" data-dismiss="modal" id="alipay_cancel" type="button">取消</button></p>
+								<p class="text-right"><button class="btn btn-flat btn-brand waves-attach" data-dismiss="modal" id="alipay_cancel" type="button">Cancel</button></p>
 							</div>
 						</div>
 					</div>
@@ -217,7 +217,7 @@
                 },
                 error: function (jqXHR) {
                     $("#result").modal();
-                    $("#msg").html("发生错误：" + jqXHR.status);
+                    $("#msg").html("error：" + jqXHR.status);
                 }
             })
         })
@@ -251,7 +251,7 @@
                     $("#readytopay").modal('hide');
                     if (data.ret) {
                         $("#qrcode").html(data.qrcode);
-                        $("#info").html("您的订单金额为："+data.amount+"元。");
+                        $("#info").html("Ammount："+data.amount+" rmb");
                         $("#alipay").modal();
                     } else {
                         $("#result").modal();
@@ -261,7 +261,7 @@
                 error: function (jqXHR) {
                     $("#readytopay").modal('hide');
                     $("#result").modal();
-                    $("#msg").html(data.msg+"  发生了错误。");
+                    $("#msg").html(data.msg+"  error");
                 }
             })
         });
@@ -283,7 +283,7 @@
                         clearTimeout(tid);
                         $("#alipay").modal('hide');
                         $("#result").modal();
-                        $("#msg").html("充值成功！");
+                        $("#msg").html("Success！");
                         window.setTimeout("location.href=window.location.href", {$config['jump_delay']});
                     }
                 }
