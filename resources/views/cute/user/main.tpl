@@ -32,31 +32,31 @@
 							</a>
 							<ul class="dropdown-menu dropdown-menu-right">								
 								<li>
-									<a class="padding-right-lg waves-attach" href="/user" class="padding-right-lg waves-attach"><i class="icon icon-lg margin-right">recent_actors</i>&nbsp;用户中心</a>
+									<a class="padding-right-lg waves-attach" href="/user" class="padding-right-lg waves-attach"><i class="icon icon-lg margin-right">recent_actors</i>&nbsp; User dashboard</a>
 								</li>
 								<li>
-									<a class="padding-right-lg waves-attach" href="/user/profile"><i class="icon icon-lg margin-right">info</i>&nbsp;账户信息</a>
+									<a class="padding-right-lg waves-attach" href="/user/profile"><i class="icon icon-lg margin-right">info</i>&nbsp;My account</a>
 								</li>
 								<li>
-									<a class="padding-right-lg waves-attach" href="/user/edit"><i class="icon icon-lg margin-right">info</i>&nbsp;修改</a>
+									<a class="padding-right-lg waves-attach" href="/user/edit"><i class="icon icon-lg margin-right">info</i>&nbsp;Edit</a>
 								</li>
 								<li>
-									<a class="padding-right-lg waves-attach" href="/user/invite"><i class="icon icon-lg margin-right">loyalty</i>&nbsp;邀请码</a>
+									<a class="padding-right-lg waves-attach" href="/user/invite"><i class="icon icon-lg margin-right">loyalty</i>&nbsp;Invitation code</a>
 								</li>
 								<li>
-									<a class="padding-right-lg waves-attach" href="/user/logout"><span class="icon icon-lg margin-right">exit_to_app</span>登出</a>
+									<a class="padding-right-lg waves-attach" href="/user/logout"><span class="icon icon-lg margin-right">exit_to_app</span>Log out</a>
 								</li>								
 							</ul>
 						{else}
-							<span class="access-hide">未登录</span>
+							<span class="access-hide">Not logged in</span>
 							<span class="avatar avatar-sm"><img alt="alt text for John Smith avatar" src="/theme/material/images/users/avatar-001.jpg"></span>
 							</a>
 							<ul class="dropdown-menu dropdown-menu-right">
 								<li>
-									<a class="padding-right-lg waves-attach" href="/auth/login"><span class="icon icon-lg margin-right">account_box</span>登录</a>
+									<a class="padding-right-lg waves-attach" href="/auth/login"><span class="icon icon-lg margin-right">account_box</span>Log in</a>
 								</li>
 								<li>
-									<a class="padding-right-lg waves-attach" href="/auth/register"><span class="icon icon-lg margin-right">pregnant_woman</span>注册</a>
+									<a class="padding-right-lg waves-attach" href="/auth/register"><span class="icon icon-lg margin-right">pregnant_woman</span>Register</a>
 								</li>
 							</ul>
 						{/if}
@@ -71,45 +71,45 @@
 
 				<ul class="nav">
 					<li>
-						<a class="waves-attach sub" data-toggle="collapse" href="#ui_menu_me">我的</a>
+						<a class="waves-attach sub" data-toggle="collapse" href="#ui_menu_me">My account</a>
 						<ul class="menu-collapse collapse in" id="ui_menu_me">
 							<li>
-								<a href="/user" class="padding-right-lg waves-attach"><i class="icon icon-lg">recent_actors</i>&nbsp;用户中心</a>
+								<a href="/user" class="padding-right-lg waves-attach"><i class="icon icon-lg">recent_actors</i>&nbsp;Dashboard</a>
 							</li>							
 						</ul>
 
 
-						<a class="waves-attach sub" data-toggle="collapse" href="#ui_menu_help">产品购买</a>
+						<a class="waves-attach sub" data-toggle="collapse" href="#ui_menu_help">My subscription</a>
 						<ul class="menu-collapse collapse in" id="ui_menu_help">
 						
 							<li>
 								<a href="/user/code">
-									<i class="icon icon-lg">code</i>&nbsp; 1-充值
+									<i class="icon icon-lg">code</i>&nbsp; 1-Purchase credits
 								</a>
 							</li>
 							<li>
 								<a href="/user/shop">
-									<i class="icon icon-lg">shop</i>&nbsp; 2-购买套餐
+									<i class="icon icon-lg">shop</i>&nbsp; 2-Purchase subscriptions
 								</a>
 							</li>
 							<li>
-								<a href="/user/node"><i class="icon icon-lg">router</i>&nbsp; 3-节点/教程/流量</a>
+								<a href="/user/node"><i class="icon icon-lg">router</i>&nbsp; 3-Server list/Tutorials/Data package</a>
 							</li>
 						</ul>
 						
 						
 						{if $user->isAdmin()}
-						<a class="waves-attach sub" data-toggle="collapse" href="#ui_menu_use">使用</a>
+						<a class="waves-attach sub" data-toggle="collapse" href="#ui_menu_use">Usage</a>
 						<ul class="menu-collapse collapse in" id="ui_menu_use">
 							
 							<li>
 								<a href="/user/lookingglass">
-									<i class="icon icon-lg">youtube_searched_for</i>&nbsp;观察窗
+									<i class="icon icon-lg">youtube_searched_for</i>&nbsp;Server looking glass
 								</a>
 							</li>
 							<li>
 								<a href="/user/relay">
-									<i class="icon icon-lg">compare_arrows</i>&nbsp;中转规则
+									<i class="icon icon-lg">compare_arrows</i>&nbsp;Server relay
 								</a>
 							</li>							
 
@@ -124,19 +124,19 @@
 						</ul>
 						-->
 						
-						<a class="waves-attach sub" data-toggle="collapse" href="#ui_menu_trade">帮助</a>
+						<a class="waves-attach sub" data-toggle="collapse" href="#ui_menu_trade">Support</a>
 						<ul class="menu-collapse collapse in" id="ui_menu_trade">
 							<li>
 								<a href="/user/ticket">
-									<i class="icon icon-lg">question_answer</i>&nbsp;联系我们
+									<i class="icon icon-lg">question_answer</i>&nbsp;Support tickets
 								</a>
 							</li>
 							<li>
 								<a href="/user/announcement">
-									<i class="icon icon-lg">announcement</i>&nbsp;公告
+									<i class="icon icon-lg">announcement</i>&nbsp;Announcements
 								</a>
 							</li>
-							<li><a href="/user/bought"><i class="icon icon-lg">shopping_cart</i>&nbsp;交易记录</a></li>
+							<li><a href="/user/bought"><i class="icon icon-lg">shopping_cart</i>&nbsp;Purchase history</a></li>
 							<!--<li>
 								<a href="/user/trafficlog"><i class="icon icon-lg">traffic</i>&nbsp;流量记录</a>
 							</li>-->
@@ -146,7 +146,7 @@
 						{if $user->isAdmin()}
 							<li>
 								<a href="/admin" class="admin">
-									<i class="icon icon-lg">person_pin</i>&nbsp;管理面板Admin
+									<i class="icon icon-lg">person_pin</i>&nbsp;Admin panel
 								</a>
 							</li>
 						{/if}
