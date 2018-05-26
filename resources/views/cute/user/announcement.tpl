@@ -11,8 +11,8 @@
 	<main class="content">
 		<div class="content-header ui-content-header">
 			<div class="container">
-				<h1 class="content-heading">公告</h1>
-				<h5 class="content-heading">有问题，先找一下答案！</h5>
+				<h1 class="content-heading">Announcements</h1>
+				<h5 class="content-heading">If you have any questions, please check the announcements first!</h5>
 			</div>
 		</div>
 		<div class="container">
@@ -28,7 +28,7 @@
 												<table class="table">
 													<tr>
 														<th>ID</th>														
-														<th>内容</th>
+														<th>Content</th>
 													</tr>
 													{foreach $anns as $ann}
 														<tr>
