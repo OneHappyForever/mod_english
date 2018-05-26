@@ -6,8 +6,8 @@
 	<main class="content">
 		<div class="content-header ui-content-header">
 			<div class="container">
-				<h1 class="content-heading">用户中心</h1>
-				<h5 class="content-heading">遇到问题，请至<a href="/user/announcement"/>常见问题 & 公告</a></h5>
+				<h1 class="content-heading">Dashboard</h1>
+				<h5 class="content-heading">If you have any questions, please check the <a href="/user/announcement"/>FAQ & Announcements</a></h5>
 			</div>
 		</div>
 		<div class="container">
@@ -20,7 +20,7 @@
 							<div class="card">
 								<div class="card-main">
 									<div class="card-inner">
-									<p class="card-heading">最新公告：</p>
+									<p class="card-heading">Latest announcements：</p>
 									<p>{$ann->content}</p>
 									</div>
 								</div>
@@ -31,10 +31,10 @@
 							<div class="card">
 								<div class="card-main">
 									<div class="card-inner">
-										<p class="card-heading">说明：</p>
-										<p>【严禁】BT下载，非法活动，一经发现，有权在不通知不退款的情况下查封删除账号！</p>
+										<p class="card-heading">IMPORTANT：</p>
+										<p> Torrenting and other illegal activities are strictly prohibited. Using our services for such activities is grounds for immediate cancellation of your subscription without warning.</p>
 										<p>
-											【设备限制】 不限制设备数量。按流量使用。
+											We do not limit the number of devices you can use.
 										</p>										
 									</div>
 
@@ -45,9 +45,9 @@
 							<div class="card">
 								<div class="card-main">
 									<div class="card-inner">
-										<p class="card-heading">购买流程：</p>
+										<p class="card-heading"Checkout process：</p>
 										<p>
-											1 <a href="/user/code">充值</a> → 2 <a href="/user/shop">购买套餐</a> → 3 <a href="/user/node">安装工具 & 扫码</a>
+											1 <a href="/user/code">Purchase credits</a> → 2 <a href="/user/shop">Use the credits to purchase a subscription</a> → 3 <a href="/user/node">Install and setup the VPN on your devices.</a>
 										</p>
 									</div>
 								</div>
