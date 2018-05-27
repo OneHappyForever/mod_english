@@ -10,7 +10,7 @@
 	<main class="content">
 		<div class="content-header ui-content-header">
 			<div class="container">
-				<h1 class="content-heading">节点列表</h1>
+				<h1 class="content-heading">Server List</h1>
 			</div>
 		</div>
 		<div class="container">
@@ -21,8 +21,8 @@
 							<div class="card-main">
 								<div class="card-inner">
 									<p>
-									<a class="btn btn-flat waves-attach waves-effect" href="/user/shop"><i class="icon icon-lg">check</i>&nbsp;先购买套餐，才能使用！</a>
-									【！】请勿在任何地方公开节点地址！ 【说明】流量比例为0.5即使用1000MB按照500MB流量记录记录结算.	
+									<a class="btn btn-flat waves-attach waves-effect" href="/user/shop"><i class="icon icon-lg">check</i>&nbsp;Please purchase a subscription first！</a>
+									【！】Please do not share these servers publicly, including on social media!	
 									</p>
 								</div>
 							</div>
@@ -35,14 +35,14 @@
 						<div class="card margin-bottom-no">
 							<div class="card-main">
 								<div class="card-inner">
-									<h4>工具下载：</h4>
+									<h4>App download：</h4>
 									
 									<div class="col-lg-2 col-sm-3">
 										<div class="dl_con">
 
 										<p><i class="icon icon-lg">desktop_windows</i> Windows&nbsp;</p>
-										<p><a href="/ssr-download/ssr-win.7z" target="_blank">工具下载</a></p>
-										<p><a href="http://www.jianshu.com/p/751bdd68ccab" target="_blank">查看教程</a></p>
+										<p><a href="/ssr-download/ssr-win.7z" target="_blank">Download</a></p>
+										<p><a href="http://www.jianshu.com/p/751bdd68ccab" target="_blank">Setup instructions</a></p>
 
 										</div>
 									</div>
@@ -51,8 +51,8 @@
 										<div class="dl_con">
 
 										 <p><i class="icon icon-lg">laptop_mac</i> Mac OS&nbsp;</p>
-										 <p><a href="/ssr-download/ssr-mac.dmg" target="_blank">工具下载</a></p>
-										 <p><a href="http://www.jianshu.com/p/ba2eb3acb085" target="_blank">查看教程</a></p>
+										 <p><a href="/ssr-download/ssr-mac.dmg" target="_blank">Download</a></p>
+										 <p><a href="http://www.jianshu.com/p/ba2eb3acb085" target="_blank">Setup instructions</a></p>
 
 										</div>
 									</div>
@@ -61,8 +61,8 @@
 										<div class="dl_con">
 
 										 <p><i class="icon icon-lg">android</i> Android&nbsp;</p>
-										 <p><a href="/ssr-download/ssr-android.apk" target="_blank">工具下载</a></p>
-										 <p><a href="http://www.jianshu.com/p/2c5eb5a5c2c3" target="_blank">查看教程</a></p>
+										 <p><a href="/ssr-download/ssr-android.apk" target="_blank">Download</a></p>
+										 <p><a href="http://www.jianshu.com/p/2c5eb5a5c2c3" target="_blank">Setup instructions</a></p>
 
 										</div>
 									</div>
@@ -70,9 +70,9 @@
 									<div class="col-lg-2 col-sm-3">
 										<div class="dl_con">
 
-										 <p><i class="icon icon-lg">phone_iphone</i> iphone/ipad&nbsp;</p>
-										 <p><a href="https://u.nu/z-2" target="_blank">工具下载</a> <span style="color: #f00">需用美区账号</span></p>
-										 <p><a href="http://www.jianshu.com/p/c6e9788f5f00" target="_blank">查看教程</a></p>
+										 <p><i class="icon icon-lg">phone_iphone</i> iOS&nbsp;</p>
+										 <p><a href="https://u.nu/z-2" target="_blank">Download</a> <span style="color: #f00">Please use a foreign iTunes ID</span></p>
+										 <p><a href="http://www.jianshu.com/p/c6e9788f5f00" target="_blank">Setup instructions</a></p>
 
 										</div>
 									</div>
@@ -98,13 +98,13 @@
 											<div class="col-lg-12 col-sm-12">
 											<div class="use-con">
 												<div class="sub">
-													帐号等级 <span class="label label-brand-accent">VIP{$user->class}</span> 
+													Account grade <span class="label label-brand-accent">VIP{$user->class}</span> 
 													
-													<span class="label btn-flat btn-orange">剩余 {$user->unusedTraffic()}</span>   
-													<span class="label btn-flat btn-red">今日 {$user->TodayusedTraffic()} | 已用 {$user->LastusedTraffic()}</span> 
+													<span class="label btn-flat btn-orange">Data left: {$user->unusedTraffic()}</span>   
+													<span class="label btn-flat btn-red">Data used today: {$user->TodayusedTraffic()} | Total used: {$user->LastusedTraffic()}</span> 
 													
 													<div class="pull-right">
-													上次使用：{$user->lastSsTime()}
+													Last time online：{$user->lastSsTime()}
 													</div>
 												</div>
 											</div>
@@ -132,42 +132,42 @@
 																		<div class="card-main">
 																			<div class="card-inner">
 																			<p class="card-heading" >
-																				节点{$node->name}{if $relay_rule != null} - {$relay_rule->dist_node()->name}{/if}
+																				Server name: {$node->name}{if $relay_rule != null} - {$relay_rule->dist_node()->name}{/if}
 																			</p>
 
-																			<a class="btn btn-flat pull-right" href="javascript:void(0);" onClick="urlChange('{$node->id}',0,{if $relay_rule != null}{$relay_rule->id}{else}0{/if})">查看二维码</a>
+																			<a class="btn btn-flat pull-right" href="javascript:void(0);" onClick="urlChange('{$node->id}',0,{if $relay_rule != null}{$relay_rule->id}{else}0{/if})">Server QR code</a>
 
 																			<p>
-																				节点状态：
+																				Server status：
 																				{if $node_heartbeat[$prefix]=="在线"}
-																				<span class="label label-brand-accent">正常</span>
+																				<span class="label label-brand-accent">Online</span>
 																				{else}{if $node_heartbeat[$prefix]=='暂无数据'}
 																				<span class="label">report</span>
 																				{else}
-																				<span class="label">离线</span>
+																				<span class="label">Offline</span>
 																				{/if}{/if}
 																			</p>
 
 																			{if $node->sort == 0||$node->sort==7||$node->sort==8||$node->sort==10}
 																																							
 
-																				<p>流量比例：
+																				<p>Data usage ratio：
 																				<span class="label label-red">
 																					{$node->traffic_rate}
 																				</span></p>
 																				
 																			{/if}
 
-																				<p>适用场景：
+																				<p>Details：
 																				{$node->info}</p>
 
 																				{if $user->isAdmin()}
 
-																				<p>在线人数：
+																				<p>Users on this server：
 																					{$node_alive[$prefix]}
 																				</p>
 
-																				<p>流量情况：
+																				<p>Total data used：
 																					{if isset($node_bandwidth[$prefix])==true}{$node_bandwidth[$prefix]}{else}N/A{/if}
 																				</p>
 
