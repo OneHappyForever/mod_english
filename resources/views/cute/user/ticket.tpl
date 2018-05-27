@@ -46,9 +46,9 @@
                                     <td>{$ticket->datetime()}</td>
                                     <td>{$ticket->title}</td>
 									{if $ticket->status==1}
-									<td>Open ticket</td>
+									<td>Opened</td>
 									{else}
-									<td>Close ticket</td>
+									<td>Closed</td>
 									{/if}
                                 </tr>
                             {/foreach}
