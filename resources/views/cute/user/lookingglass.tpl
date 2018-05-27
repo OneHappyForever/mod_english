@@ -15,7 +15,7 @@
 	<main class="content">
 		<div class="content-header ui-content-header">
 			<div class="container">
-				<h1 class="content-heading">观察窗</h1>
+				<h1 class="content-heading">Server Looking-glass</h1>
 			</div>
 		</div>
 		<div class="container">
@@ -26,8 +26,8 @@
 							<div class="card">
 								<div class="card-main">
 									<div class="card-inner margin-bottom-no">
-										<p class="card-heading">注意!</p>
-										<p>此处只展示最近{$hour}小时的记录.</p><b>测试节点来自 <a href="http://speedtest.net">Speedtest</a>，数据仅供参考~</b>
+										<p class="card-heading">Important:</p>
+										<p>Only the last {$hour} hours are shown.</p><b>The data below is from <a href="http://speedtest.net">Speedtest.net</a>，and are for reference only~</b>
 									</div>
 									
 								</div>
@@ -38,21 +38,21 @@
 							<div class="card">
 								<div class="card-main">
 									<div class="card-inner margin-bottom-no">
-										<p class="card-heading">观察窗</p>
+										<p class="card-heading">Server looking-glass</p>
 										<div class="card-table">
 											<div class="table-responsive">
 												<table class="table">
 													<tr>
-														<th>节点</th>
-														<th>电信延迟</th>
-														<th>电信下载速度</th>
-														<th>电信上传速度</th>
-														<th>联通延迟</th>
-														<th>联通下载速度</th>
-														<th>联通上传速度</th>
-														<th>移动延迟</th>
-														<th>移动下载速度</th>
-														<th>移动上传速度</th>
+														<th>Server</th>
+														<th>Ping from China Telecom</th>
+														<th>China Telecom download speed</th>
+														<th>China Telecom upload speed</th>
+														<th>Ping from China Unicom</th>
+														<th>China Unicom download speed</th>
+														<th>China Unicom upload speed</th>
+														<th>Ping from Chiina Mobile</th>
+														<th>China Mobile download speed</th>
+														<th>China Mobile upload speed</th>
 													</tr>
 													{foreach $speedtest as $single}
 														<tr>
